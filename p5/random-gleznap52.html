@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<script> 
+  function draw() {
+    background(220);
+  }function setup() {
+      createCanvas(400, 400);
+  }
+  
+  function draw() {
+      background(220);
+  }
+  
+  let confetti = [];
+  let numConfetti = 1100;
+  
+  function setup() {
+      createCanvas(windowWidth, windowHeight);
+      for (let i = 0; i < numConfetti; i++) {
+          confetti.push(new Confetti());
+      }
+  }
+  
+  function draw() {
+      background(0);
+  
+      for (let i = 0; i < confetti.length; i++) {
+          confetti[i].display();
+          confetti[i].move();
+      }
+  }
+  
+  class Confetti {
+      constructor() {
+          this.x = random(width);
+          this.y = random(-height, 0);
+          this.size = random(10, 30);
+         this.color = color(random(150, 255), 0, 0);
+        this.color = color(random(400,100), 0, 0);
+          this.speed = random(10, 1);
+          this.freezePosition = random(height * 0, height * 4);
+          this.frozen = false;
+      }
+  
+      display() {
+          fill(this.color);
+          noStroke();
+         
+          let choice = random();
+          if (choice < 0.33) {
+              ellipse(this.x, this.y, this.size, this.size);
+          } else if (choice < 0.66) {
+              // Draw teardrop shape facing top
+              beginShape();
+              vertex(this.x, this.y - this.size / 2);
+              bezierVertex(
+                  this.x - this.size / 2,
+                  this.y - this.size / 2,
+                  this.x,
+                  this.y + this.size / 2,
+                  this.x + this.size / 2,
+                  this.y - this.size / 2
+              );
+              endShape(CLOSE);
+          } else {
+              // Draw a line
+              stroke(this.color);
+              line(this.x, this.y, this.x + this.size * 2, this.y);
+          }
+      }
+  
+      move() {
+          if (!this.frozen) {
+              if (this.y < this.freezePosition) {
+                  this.y += this.speed;
+              } else {
+                  this.frozen = true;
+              }
+          }
+      }
+  }
+  
+  function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      for (let i = 0; i < confetti.length; i++) {
+          confetti[i].x = random(width);
+          confetti[i].y = random(-height, 0);
+          confetti[i].freezePosition = random(height * 0.4, height * 0.6);
+          confetti[i].frozen = true;
+      }
+  }
+</script> 
+</body>
+</html>

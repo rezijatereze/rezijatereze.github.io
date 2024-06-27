@@ -1,0 +1,242 @@
+body {
+  background-color: black;
+  margin: 0 0 10vh 0;
+  color: white;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+header {
+  text-align: center;
+  background-color: #242424;
+}
+header a {
+  text-shadow: 2px 2px #8414a7;
+}
+.text-button {
+  display: inline-block;
+  padding: 0 20px;
+  transition: letter-spacing 0.2s;
+}
+.text-button:hover {
+  letter-spacing: 3px;
+}
+#homepage-box {
+  position: absolute;
+  top: 30vh;
+  left: 25vw;
+  width: 50vw;
+}
+#homepage-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20vw;
+  transform: rotate(-4deg);
+  border-radius: 10px;
+  box-shadow: 3px 3px #8414a7;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#homepage-image:hover {
+  transform: rotate(0deg);
+  box-shadow: 0px 0px #8414a7;
+}
+#homepage-text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: left;
+  margin: 0;
+  width: 27.5vw;
+  font-size: 1.25vw;
+  line-height: 1.5;
+}
+#homepage-text b {
+  font-size: 1.7vw;
+}
+#homepage-text i {
+  color: #818181;
+}
+#homepage-text img {
+  width: 2rem;
+  vertical-align: -0.65rem;
+  filter: invert();
+}
+#homepage-text a {
+  text-shadow: 2px 2px #8414a7;
+}
+#instagram-box {
+  position: relative;
+  margin-top: 80vh;
+  margin-left: 22.5vw;
+  width: 55vw;
+}
+.instagram-post {
+  position: absolute;
+  top: 0;
+  width: 25vw;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.instagram-post iframe {
+  margin-bottom: 0 !important;
+}
+.book-box {
+  display: inline-block;
+  margin: 5vh 0;
+  padding: 5px;
+  text-align: center;
+  border: 4px solid white;
+  border-radius: 10px;
+  box-shadow: 4px 4px #8414a7;
+  transform: translateX(calc(50vw - 50%));
+}
+.book-box img {
+  height: 35vw;
+}
+.canvas-frame {
+  display: block;
+  margin: 5vh 0 0 30vw;
+  width: 40vw;
+  height: 22.5vw;
+  border: 4px solid white;
+  border-radius: 10px;
+  box-shadow: 4px 4px #8414a7;
+}
+.poster {
+  display: block;
+  margin: 7vh 0 0 0;
+  height: 50vh;
+  border: 4px solid white;
+  border-radius: 10px;
+  box-shadow: 4px 4px #8414a7;
+  transform: translateX(calc(50vw - 50%));
+}
+.poster-title {
+  text-align: center;
+}
+.images-box {
+  margin-top: 5vh;
+  text-align: center;
+}
+.glitch-image {
+  width: 25vw;
+}
+.glitch-video {
+  margin: 5vh 0 0 25vw;
+  width: 50vw;
+}
+.gif-image {
+  width: 25vw;
+  margin: 0 2vw;
+}
+
+
+@media only screen and (max-width: 800px) {
+  
+  .text-button:hover {
+    letter-spacing: 0;
+  }
+  #homepage-box {
+    position: relative;
+    top: 5vh;
+    left: 0;
+    width: 100%;
+  }
+  #homepage-image {
+    position: relative;
+    left: 20vw;
+    top: 0;
+    width: 60vw;
+    transform: none;
+  }
+  #homepage-text {
+    position: relative;
+    text-align: center;
+    margin: 20px 0 0 0;
+    width: 100%;
+    font-size: 1rem;
+  }
+  #homepage-text b {
+    font-size: 1.5rem;
+  }
+  #homepage-text img {
+    width: 1.5rem;
+  }
+  #instagram-box {
+    position: relative;
+    margin-top: 10vh;
+    margin-left: 10%;
+    width: 80%;
+  }
+  .instagram-post {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 0 2vh 0;
+    transform: none !important;
+  }
+  .instagram-post iframe {
+    margin-bottom: 0 !important;
+  }
+  .book-box {
+    position: relative;
+    display: inline-block;
+    margin: 5vh 0;
+    padding: 0;
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+  }
+  .book-box img {
+    height: auto;
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 80vw;
+    box-sizing: border-box;
+  }
+  .book-middle {
+    position: absolute;
+    left: 90vw;
+    top: 0;
+    height: 80vw !important;
+    width: auto !important;
+    transform-origin: top left;
+    transform: rotate(90deg);
+  }
+  .canvas-frame {
+    margin: 5vh 0 0 10vw;
+    width: 80vw;
+    height: 45vw;
+  }
+  
+  .poster {
+    height: auto;
+    width: 80vw;
+  }
+  .poster-title {
+    padding: 0 5%;
+    text-align: center;
+  }
+  .images-box {
+    margin-top: 5vh;
+    text-align: center;
+  }
+  .glitch-image {
+    width: 80vw;
+    margin-bottom: 2vh;
+  }
+  .glitch-video {
+    margin: 5vh 0 0 10vw;
+    width: 80vw;
+  }
+  .gif-image {
+    width: 80vw;
+    margin: 2vh 10vw;
+  }
+}
